@@ -37,7 +37,7 @@ Gate chặn `seeded_regression` vì `pass_rate` dưới sàn và CI nằm hoàn 
 
 - **Judge replay** — `tone_ok` đạt ngưỡng với κ = 0,757, precision = 0,857 và recall = 0,800. `helpful` bị loại khỏi gate vì κ = 0,375 và recall = 0,300. Xem [judge audit](judge_audit.md).
 - **Trace case** — `C-002@11` ghi đè `delay_days` tại event 3, dẫn đến hoàn sai 20.000đ. Bản `fixed` ghi ledger 0đ. Xem [trace case và regression test](trace_case.md).
-- **Phạm vi đã đo** — Ticket hoàn tiền theo từng đơn của chủ sở hữu, gồm giao trễ và hàng hỏng đã xác minh. Host kiểm tra approval và giới hạn số tiền theo policy. Kênh và hạn mức riêng của pilot thực tế `(...)`.
+- **Phạm vi đã đo** — Ticket hoàn tiền theo từng đơn của chủ sở hữu, gồm giao trễ và hàng hỏng đã xác minh. Host kiểm tra approval và giới hạn số tiền theo policy. Kênh thử nghiệm là CLI trong Lab 9. Số tiền được giới hạn theo approval, số tiền đã thanh toán và phần còn lại theo trần của đơn hàng. Pilot với người dùng thật chưa được triển khai.
 - **Giới hạn** — 14 item công khai trên MockLLM và verdict judge được replay. Chưa có dữ liệu người dùng thật hoặc tập held-out mới.
-- **Người phụ trách gate** — Nguyễn Thế Hoàng. PR và trạng thái job `eval-gate` `(...)`.
+- **Người phụ trách gate** — Nguyễn Thế Hoàng. Core được nộp qua [PR #1](https://github.com/rollingthunder02/K5-L3A-Day9-NguyenTheHoang-2A202603718-Evaluation-and-Failure-Analysis/pull/1) và bổ sung tài liệu qua [PR #2](https://github.com/rollingthunder02/K5-L3A-Day9-NguyenTheHoang-2A202603718-Evaluation-and-Failure-Analysis/pull/2). Cả hai đã merge vào main. Job eval-gate đã PASS theo xác nhận của Nguyễn Thế Hoàng ngày 17/11/2026.
 - **Phiên bản eval set** — Khi thay đổi tập item hoặc nhãn, tăng `eval_set_version` và sinh lại baseline để gate so sánh cùng SHA.
