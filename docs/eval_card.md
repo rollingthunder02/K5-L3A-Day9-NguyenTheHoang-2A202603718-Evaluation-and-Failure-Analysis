@@ -1,6 +1,6 @@
 # Eval card — LogiX-VN refund agent
 
-- **Phiên bản** — Commit code `(...)`, commit grader `(...)`, metric spec `1.0`, eval set `v1` với SHA `2c3baaee3cdd`.
+- **Phiên bản** — Commit code `195bd69`, commit grader `195bd69`, metric spec `1.0`, eval set `v1` với SHA `2c3baaee3cdd`.
 - **Dữ liệu** — 14 item từ `lab8_public`, mỗi item chạy với seed 11, 22, 33, 44 và 55. Nhãn nằm riêng trong [labels_v1.json](../src/data/eval/labels_v1.json).
 - **Môi trường** — MockLLM, Python 3.12.7, 70 lượt chạy và 0 lỗi evaluator trên mỗi report.
 
@@ -39,5 +39,5 @@ Gate chặn `seeded_regression` vì `pass_rate` dưới sàn và CI nằm hoàn 
 - **Trace case** — `C-002@11` ghi đè `delay_days` tại event 3, dẫn đến hoàn sai 20.000đ. Bản `fixed` ghi ledger 0đ. Xem [trace case và regression test](trace_case.md).
 - **Phạm vi đã đo** — Ticket hoàn tiền theo từng đơn của chủ sở hữu, gồm giao trễ và hàng hỏng đã xác minh. Host kiểm tra approval và giới hạn số tiền theo policy. Kênh và hạn mức riêng của pilot thực tế `(...)`.
 - **Giới hạn** — 14 item công khai trên MockLLM và verdict judge được replay. Chưa có dữ liệu người dùng thật hoặc tập held-out mới.
-- **Người phụ trách gate** — `(...)`. PR và trạng thái job `eval-gate` `(...)`.
+- **Người phụ trách gate** — Nguyễn Thế Hoàng. PR và trạng thái job `eval-gate` `(...)`.
 - **Phiên bản eval set** — Khi thay đổi tập item hoặc nhãn, tăng `eval_set_version` và sinh lại baseline để gate so sánh cùng SHA.
