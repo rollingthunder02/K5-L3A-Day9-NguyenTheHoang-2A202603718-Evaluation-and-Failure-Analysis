@@ -15,7 +15,7 @@ v1.1 bổ sung tiêu chí đánh giá, điều kiện chặn release và trách 
 - **Phạm vi đã đo** — Ticket hoàn phí giao trễ và bồi thường hàng hỏng đã xác minh, mỗi claim xử lý một đơn của chủ sở hữu. Thiếu mã đơn thì hỏi thêm. Yêu cầu ngoài phạm vi truy cập được chuyển cho chuyên viên.
 - **Giới hạn giao dịch** — Host yêu cầu approval hợp lệ gắn với claim. Số tiền bị giới hạn theo approval, số tiền đã thanh toán và phần còn lại theo trần của đơn. Mỗi claim có tối đa một giao dịch hoàn. Xem [autonomy policy](../src/config/autonomy_policy.yaml).
 - **Ngoài phạm vi v1** — Xử lý nhiều đơn trong một claim và tự truy cập đơn của principal khác.
-- **Pilot thực tế** — Kênh `(...)`, hạn mức riêng `(...)`.
+- **Pilot** — Thử nghiệm qua CLI trong Lab 9, áp dụng các giới hạn giao dịch của autonomy policy. Pilot với người dùng thật chưa được triển khai.
 - **Môi trường đo** — MockLLM, eval set v1 gồm 14 item × 5 seed.
 
 ## 3. Định nghĩa chạy đúng
@@ -56,9 +56,9 @@ Judge `tone_ok` dùng cho giọng điệu sau hiệu chuẩn. Judge `helpful` d�
 
 - Chạy từ `src/` bằng `python -m lab9.gate --pr reports/eval_<shape>.json --baseline reports/baseline_v1.json`.
 - Baseline từ nhánh được bảo vệ phải phủ đủ item × seed. Gate yêu cầu SHA của eval set ứng viên trùng baseline.
-- Gate exit 0 cho qua. Gate exit 1 chặn merge. Người xử lý gate là Nguyễn Thế Hoàng. Người duyệt ngoại lệ `(...)`. Lý do của ngoại lệ được ghi trong PR.
+- Gate exit 0 cho qua. Gate exit 1 chặn merge. Người xử lý gate là Nguyễn Thế Hoàng. Người duyệt ngoại lệ chờ xác nhận phân công. Lý do của ngoại lệ được ghi trong PR.
 - Đối chứng local `fixed` exit 0, `seeded_regression` exit 1. Xem [eval card](eval_card.md) để đối chiếu run ID và CI.
-- PR và kết quả job `eval-gate` `(...)`.
+- Core được nộp qua [PR #1](https://github.com/rollingthunder02/K5-L3A-Day9-NguyenTheHoang-2A202603718-Evaluation-and-Failure-Analysis/pull/1) và bổ sung tài liệu qua [PR #2](https://github.com/rollingthunder02/K5-L3A-Day9-NguyenTheHoang-2A202603718-Evaluation-and-Failure-Analysis/pull/2). Cả hai đã merge vào main. Job eval-gate đã PASS theo xác nhận của Nguyễn Thế Hoàng ngày 17/11/2026.
 
 ## 6. Bằng chứng còn thiếu và rủi ro mở
 
@@ -75,5 +75,5 @@ Judge `tone_ok` dùng cho giọng điệu sau hiệu chuẩn. Judge `helpful` d�
 
 | Vai trò | Tên | Ngày |
 |---|---|---|
-| Product | (...) | (...) |
-| Eval owner | Nguyễn Thế Hoàng | (...) |
+| Product | Chờ xác nhận phân công | Chưa xác nhận phê duyệt |
+| Eval owner | Nguyễn Thế Hoàng | Xác nhận gate PASS ngày 17/11/2026, phê duyệt tài liệu chờ xác nhận |
