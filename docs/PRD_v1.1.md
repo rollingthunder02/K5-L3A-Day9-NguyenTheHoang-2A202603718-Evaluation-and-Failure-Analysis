@@ -56,7 +56,7 @@ Judge `tone_ok` dùng cho giọng điệu sau hiệu chuẩn. Judge `helpful` d�
 
 - Chạy từ `src/` bằng `python -m lab9.gate --pr reports/eval_<shape>.json --baseline reports/baseline_v1.json`.
 - Baseline từ nhánh được bảo vệ phải phủ đủ item × seed. Gate yêu cầu SHA của eval set ứng viên trùng baseline.
-- Gate exit 0 cho qua. Gate exit 1 chặn merge. Người xử lý `(...)`. Người duyệt ngoại lệ `(...)`. Lý do của ngoại lệ được ghi trong PR.
+- Gate exit 0 cho qua. Gate exit 1 chặn merge. Người xử lý gate là Nguyễn Thế Hoàng. Người duyệt ngoại lệ `(...)`. Lý do của ngoại lệ được ghi trong PR.
 - Đối chứng local `fixed` exit 0, `seeded_regression` exit 1. Xem [eval card](eval_card.md) để đối chiếu run ID và CI.
 - PR và kết quả job `eval-gate` `(...)`.
 
@@ -76,4 +76,4 @@ Judge `tone_ok` dùng cho giọng điệu sau hiệu chuẩn. Judge `helpful` d�
 | Vai trò | Tên | Ngày |
 |---|---|---|
 | Product | (...) | (...) |
-| Eval owner | (...) | (...) |
+| Eval owner | Nguyễn Thế Hoàng | (...) |
